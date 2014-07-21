@@ -405,7 +405,8 @@ class MainWindow(widgets.GladeWidget):
     def _getting_started_item_clicked(self, widget):
         try:
             # unfortunately, gtk.show_uri does not work in RHEL 5
-            subprocess.call(["gnome-open", "ghelp:subscription-manager"])
+	    # the following is an absolute path to the help text
+            subprocess.call(["gnome-help", '/usr/share/gnome/help/subscription-manager/C/subscription-manager.xml'])
         except Exception, e:
             # if we can't open it, it's probably because the user didn't
             # install the docs, or yelp. no need to bother them.
