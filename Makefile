@@ -297,6 +297,8 @@ install: install-files install-conf install-help-files install-plugins-conf
 set-versions:
 	sed -e 's/RPM_VERSION/$(VERSION)/g' $(SRC_DIR)/version.py.in > $(SRC_DIR)/version.py
 	sed -e 's/RPM_VERSION/$(VERSION)/g' $(RCT_SRC_DIR)/version.py.in > $(RCT_SRC_DIR)/version.py
+	sed -e 's/GTK_VERSION/$(GTK_VERSION)/g' $(SRC_DIR)/version.py.in > $(SRC_DIR)/version.py
+
 
 clean-versions:
 	rm -rf $(SRC_DIR)/version.py
